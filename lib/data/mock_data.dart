@@ -31,7 +31,7 @@ const mockCategories = [
   Categoria(
     id: 'c6',
     titulo: 'Exótica',
-    color: Colors.green,
+    color: Color.fromARGB(255, 42, 11, 151),
   ),
   Categoria(
     id: 'c7',
@@ -53,5 +53,7 @@ const mockCategories = [
     titulo: 'Verão',
     color: Colors.teal,
   ),
-  Categoria( id: "c11", titulo:"Bebidas")
+  Categoria( id: "c11",
+   titulo:"Bebidas",
+   color: Color.fromARGB(255, 170, 170, 170),)
 ];
