@@ -57,3 +57,4 @@ const mockCategories = [
    titulo:"Bebidas",
    color: Color.fromARGB(255, 170, 170, 170),)
 ];
+
