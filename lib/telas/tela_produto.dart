@@ -3,11 +3,9 @@ import 'package:navegacao/models/categorias.dart';
 
 
 class TelaProduto extends StatelessWidget {
-  final Categoria categoria;
   
-  TelaProduto(this.categoria);
 
-  // Exemplo de lista de pratos relacionados à categoria
+  //Exemplo de lista de pratos relacionados à categoria
   List<Prato> pratosDaCategoria = [
     Prato("Prato 1", "Descrição do Prato 1"),
     Prato("Prato 2", "Descrição do Prato 2"),
@@ -16,6 +14,9 @@ class TelaProduto extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final categoria= ModalRoute.of(context)?.settings.arguments as Categoria;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Tela Produtos"),
