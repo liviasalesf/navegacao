@@ -1,38 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:navegacao/models/categorias.dart';
-import 'package:navegacao/telas/tela_produto.dart';
 import 'package:navegacao/utils/rotas.dart';
+class CategoriaItem extends StatelessWidget {
 
-class ItemCategoria extends StatelessWidget {
+  final Categoria categoria;
 
-final Categoria categoria;
+  CategoriaItem(this.categoria);
 
-ItemCategoria(this.categoria);
+  void selecionarCategoria(BuildContext context){
+    //PROGRAMAR
+    // Navigator.of(context).push(
+    //   MaterialPageRoute(builder: (_){
+    //     return TelaProdutos(categoria);
+    //   })
+    // );
 
-void selecionarCategoria(BuildContext context){
-  //programação
- //Navigator.of(context).push
- //MaterialPageRoute(buider: (_))
- Navigator.of(context).pushNamed(Rotas.PRODUTO, arguments: categoria);
-}
+    Navigator.of(context).pushNamed(Rotas.PRODUTOS,  arguments: {'id': categoria.id, 'title': categoria.titulo});
+  }
+  
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return  InkWell(
       onTap: () => selecionarCategoria(context),
       child: Container(
-        child: Text(categoria.titulo),
-        padding: EdgeInsets.all(15),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          gradient: LinearGradient(
+          padding: EdgeInsets.all(15),
+          child: Text(categoria.titulo),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            gradient: LinearGradient(
             colors: [
               categoria.color.withOpacity(0.5),
               categoria.color
             ],
             begin: Alignment.topLeft,
-            end: Alignment.bottomRight)
+            end : Alignment.bottomRight,
+            )
+          ),
         ),
-      ),
     );
+  
   }
+
+
+
 }

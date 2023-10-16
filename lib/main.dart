@@ -1,28 +1,36 @@
-
-import 'package:flutter/material.dart';
-import 'package:navegacao/telas/tela_categorias.dart';
 import 'package:navegacao/telas/tela_produto.dart';
-import 'package:navegacao/utils/rotas.dart';
+import 'package:navegacao/data/produtos.dart';
+import 'package:navegacao/models/produtos.dart';
+import 'package:flutter/material.dart';
+import 'utils/rotas.dart';
 
-void main() {
-  runApp( MeuCardapio());
-}
-
-class MeuCardapio extends StatelessWidget {
-
-
+//depois de programar a tela
+import 'telas/tela_categorias.dart';
+ 
+void main() => runApp(AppCardapio());
+ // style: Theme.of(context).textTheme.titleSmall, vai no categoria
+class AppCardapio extends StatelessWidget {
+  List<Produto> produtosValidos = dummyProdutos;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Cardapio",
+      title: 'Cardápio',
       theme: ThemeData(
-        primaryColor: Colors.blue,
+        primarySwatch: Colors.blue,
+        fontFamily: 'Schyler',
+        textTheme: ThemeData.light().textTheme.copyWith(
+          titleSmall : const TextStyle(
+            fontSize: 20,
+            fontFamily: "Schyler"
+          ) 
+        )
       ),
-     //home: TelasCategorias(),
-      routes: { 
-        Rotas.HOME: (ctx) => TelasCategorias(),
-        Rotas.PRODUTO: (ctx) => TelaProduto()
+      //home: TelaCategorias(),
+      routes: {
+        Rotas.HOME : (ctx) => TelaCategorias(),
+        Rotas.PRODUTOS : (ctx) => TelaProdutos(produtosValidos), 
       }
+      
     );
   }
 }

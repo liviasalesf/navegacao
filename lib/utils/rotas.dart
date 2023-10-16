@@ -1,4 +1,4 @@
-class Rotas{
+class Rotas {
   static const HOME = '/';
-  static const PRODUTO =  "/tela_produtos";
+  static const PRODUTOS = "/tela_produtos";
 }
