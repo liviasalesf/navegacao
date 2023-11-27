@@ -1,11 +1,12 @@
 
 import 'package:flutter/material.dart';
+
 class ItemProduto extends StatelessWidget {
   final String id;
   final String title;
   final String imageUrl;
-  final double duration;
-  final double cost;
+  final  String duration;
+  final  String cost;
   
   ItemProduto({
     required this.id,
